@@ -1,0 +1,174 @@
+@font-face {
+    font-family: 'Urbanist';
+    src: url('/assets/fonts/Urbanist-VariableFont_wght.ttf') format('truetype');
+    font-weight: 100 900;
+    font-style: normal;
+}
+
+$background-color: #191919;
+$text-color: #fff;
+$input-border-color: #FCEA47;
+$button-bg-color: #FCEA47;
+$button-text-color: #000;
+
+body {
+    font-family: 'Urbanist';
+    background-color: $background-color;
+}
+
+.login-page {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: start;
+    gap: 90px;
+
+    color: $text-color;
+    font-family: 'Urbanist';
+
+    .header {
+        width: calc(100% - 40px);
+        display: flex;
+        padding: 12px 20px;
+        justify-content: space-between;
+        align-items: center;
+        background-color: $button-text-color;
+
+        .logo {
+            display: flex;
+            align-items: center;
+
+            img {
+                width: 40px;
+                margin-right: 10px;
+            }
+
+            h1 {
+                font-size: 20px;
+                color: $text-color;
+            }
+        }
+
+        .go-to-website {
+            background-color: $button-bg-color;
+            color: $button-text-color;
+            border: none;
+            padding: 0px 18px;
+            border-radius: 5px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            cursor: pointer;
+            font-size: 13px;
+            font-weight: bold;
+        }
+    }
+
+    .login-box {
+        background-color: #000000;
+        padding: 40px;
+        border-radius: 20px;
+        box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+        text-align: center;
+        min-width: 300px;
+
+        .login-title {
+            margin-bottom: 25px;
+
+            div {
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                gap: 10px;
+
+                h2 {
+                    font-size: 40px;
+                    font-weight: 500;
+                    margin: 0;
+                }
+            }
+
+            h3 {
+                font-size: 25px;
+                margin-top: 15px;
+                color: $input-border-color;
+            }
+        }
+
+        form {
+            .input-group {
+                margin-bottom: 35px;
+
+                label {
+                    display: block;
+                    font-size: 16px;
+                    text-align: start;
+                    margin-bottom: 10px;
+                }
+
+                input {
+                    width: calc(100% - 24px);
+                    padding: 12px;
+                    font-size: 14px;
+                    border: 2px solid $input-border-color;
+                    border-radius: 5px;
+                    background-color: transparent;
+                    color: $text-color;
+
+                    &:focus {
+                        outline: none;
+                        border-color: lighten($input-border-color, 10%);
+                    }
+                }
+            }
+
+            .login-button {
+                background-color: $button-bg-color;
+                color: $button-text-color;
+                border: none;
+                padding: 12px 45px;
+                border-radius: 5px;
+                cursor: pointer;
+                font-size: 16px;
+                font-weight: bold;
+            }
+        }
+    }
+}
+
+@media (max-width: 500px) {
+    .header {
+        flex-direction: column;
+        text-align: center;
+
+        .logo {
+            margin-bottom: 20px;
+        }
+
+    }
+
+    .login-box {
+        padding: 5px;
+        max-width: 100px;
+        padding: 10px;
+        margin-top: 0;
+        margin-bottom: 50px;
+
+        .login-title {
+            margin-bottom: 15px;
+
+            div {
+                h2 {
+                    font-size: 20px;
+                }
+            }
+
+            h3 {
+                font-size: 12px;
+                margin-top: 10px;
+            }
+        }
+    }
+}
